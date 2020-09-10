@@ -11,13 +11,17 @@
     <!-- Animate.css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"/>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <!-- import css -->
     <link rel="stylesheet" type="text/css" href="./css/sunset.css">
+    <!-- 字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Mogra&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css" rel="stylesheet">
     
-    <title>Sunset</title>
+    <title>Sunset ｜ Season</title>
 </head>
 
 <body>
@@ -44,18 +48,14 @@
 
     <div id="menu">
         <div id="logo">
-            <img src="./img/logo.png", width="100">
+            <a href="./home.html"><img src="./img/logo.png", width="100"></a>
         </div>
         <div id="menu_category" class="menu_box">
             <div class="category_">
-                <div class="category_title">
-                    About
-                </div>
+                <div class="category_title">About</div>
             </div>
             <div class="category_">
-                <div class="category_title">
-                    Travel
-                </div>
+                <div class="category_title">Travel</div>
                 <div class="category_text">
                     <div>
                         <ul style="display: none;">
@@ -66,15 +66,17 @@
                 </div>
             </div>
             <div class="category_">
-                <div class="category_title">
-                    Tag
-                </div>
+                <div class="category_title">Tag</div>
                 <div class="category_text">
                     <div>
                         <ul style="display: none;">
                             <li><a href="./sunset.html">Sunset</a></li>
-                            <li><a href="./mountain.html">Mountain</a></li>
                             <li><a href="./tree.html">Tree</a></li>
+                            <li><a href="./road.html">Road</a></li>
+                            <li><a href="./mountain.html">Mountain</a></li>
+                            <li><a href="./waterfall.html">Waterfall</a></li>
+                            <li><a href="./sky.html">Sky</a></li>
+                            <li><a href="./sky.html">Sea</a></li>
                         </ul>
                     </div>
                 </div>
@@ -82,25 +84,33 @@
         </div>
     </div>
 
-    <div id="photo">
-        <h3 id="title" class="animated infinite pulse"><span class="badge badge-pill badge-info">Sunset (23)</span></h3>
-        <div id="photo_area">
-            <!-- <div class="photo_box">
-                <img src="./img/sunset/1.jpeg">
-            </div>-->
-        </div>
+    <div id="title">
+        <h1 id="fix" class="animated infinite pulse badge badge-pill badge-info"></h1>
     </div>
-
-    <!-- <div id="footer">
-        <div class="footer_background">
-            <div class="footer_bg_area">
-                <div class="word">
-                    <p class="footer_word">~ Season ~</p>
-                </div>
+        
+    <div id="photo">
+        <div id="photo_area">
+            <div class="photo_box">
+                <img class="lazyload" src="./img/tag_photograph.jpg">
+                <span id="location" class="animated fadeInDown badge badge-pill badge-dark">太平山國家公園</span>
+                <img onclick="fav(this)" alt='0' src='./img/favorite_icon.png' id="favorite" class="animated fadeInLeft">
+                <img onclick="del(this)" alt='0' src='./img/delete_icon.png' id="delete" class="animated fadeInRight">
             </div>
         </div>
-    </div> -->
+        <div id="end"></div>
+    </div>
 
+    <div id="footer">
+        <div class="footer_background">
+            <div class="footer_word">
+                    <div class="footer_title">Season</div><br>
+                    <small>engineer | photographer</small><br>
+                    <img src="./img/github_icon.png" width="20px"> GITHUB | 
+                    <img src="./img/ig_icon.png" width="20px"> INSTAGRAM | 
+                    <img src="./img/fb_icon.png" width="20px"> FACEBOOK
+            </div>
+        </div>
+    </div>
     <!-- canvas -->
     <script type="text/javascript" color="0,0,255" pointColor="0,0,255" opacity='0.7' zIndex="-2" count="200"
         src="./canvas/dist/canvas-nest.js"></script>
@@ -109,13 +119,64 @@
     <!-- 下拉置頂 -->
     <script type="text/javascript" src="./js/menu.js"></script>
     <!-- 點擊放大 -->
-    <script type="text/javascript" src="./js/bigImg.js"></script>
-    
-    <!-- 下拉加載圖片 -->
+    <!-- <script type="text/javascript" src="./js/bigImg.js"></script> -->
+    <!-- api串接 -->
     <script>
-        var dataInt =[{"src":"1.jpeg"},{"src":"2.jpeg"},{"src":"3.jpg"},{"src":"4.jpg"},{"src":"6.jpg"},{"src":"5.jpg"},{"src":"7.jpg"},{"src":"8.jpg"},{"src":"9.jpg"},{"src":"10.jpg"},
-                    {"src":"11.jpg"},{"src":"12.jpg"},{"src":"13.jpg"},{"src":"14.jpg"},{"src":"15.jpg"},{"src":"16.jpg"},{"src":"17.jpg"},{"src":"18.jpg"},
-                    {"src":"19.jpg"},{"src":"20.jpg"},{"src":"21.jpg"},{"src":"22.jpg"},{"src":"23.jpg"}]
+        $.ajax({
+            type: "GET",
+            url: "http://127.0.0.1:8000/findImage_by_tag?tag=sunset",
+            dataType: "json",
+            success: function(response) {
+                lazyload(response);
+            }
+        });
+        $.ajax({
+            type: "GET",
+            url: "http://127.0.0.1:8000/findImageNum?tag=sunset",
+            dataType: "json",
+            success: function(response) {
+                var text = "Sunset (" + response.image_num + ")";
+                document.getElementById("fix").textContent=text;
+            }
+        });
+    </script>
+    <!-- lazy load-->
+    <script type="text/javascript" src="./js/lazyload.js"></script>
+    
+    <!-- icon click -->
+    <script type="text/javascript">
+        function fav(obj) {
+            var index = obj.getAttribute("alt");
+            var param = $.param({"id": index});
+            $.ajax({
+                type: "GET",
+                url: "http://127.0.0.1:8000/addFavorite?" + param,
+                dataType: "json",
+                success: function(response) {
+                    img_src = './img/favorite_icon.png';
+                    if(response.Favorite==1) {
+                        img_src = './img/favorite_icon_red.png';
+                    }
+                    obj.src = img_src;
+                }
+            });
+        }
+        function del(obj) {
+            var index = obj.getAttribute("alt");
+            var param = $.param({"id": index});
+            $.ajax({
+                type: "GET",
+                url: "http://127.0.0.1:8000/deleteImage?" + param,
+                dataType: "json",
+                success: function(response) {
+                    window.location.reload();
+                }
+            });
+        }
+    </script>
+
+    <!-- 下拉加載圖片 -->
+    <!-- <script>
         $(window).on('scroll',search)
         function search(){
             if (checkScrollSlide){
@@ -171,7 +232,7 @@
             var documentH = $(window).height();
             return(lastBoxDis<scrollTop+documentH)?true:false;
         }
-    </script>
+    </script> -->
 
     
 </body>

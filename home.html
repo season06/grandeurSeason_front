@@ -11,18 +11,22 @@
     <!-- Animate.css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"/>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <!-- import css -->
     <link rel="stylesheet" type="text/css" href="./css/homepage.css">
+    <link rel="stylesheet" href="./css/carousel.css">
+    <!-- 字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Mogra&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet">
     
     <title>Season</title>
 </head>
 
 <body>
     <div id="desktop">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-caption d-none d-md-block">
                     <div id="up" class="animated fadeInDown">
@@ -50,11 +54,11 @@
                     <img class="d-block w-100" src="./img/A3.jpg" alt="Third slide">
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
@@ -62,18 +66,14 @@
 
         <div id="menu">
             <div id="logo">
-                <img src="./img/logo.png", width="100">
+                <a href="./home.html"><img src="./img/logo.png", width="100"></a>
             </div>
             <div id="menu_category" class="menu_box">
                 <div class="category_">
-                    <div class="category_title">
-                        About
-                    </div>
+                    <div class="category_title">About</div>
                 </div>
                 <div class="category_">
-                    <div class="category_title">
-                        Travel
-                    </div>
+                    <div class="category_title">Travel</div>
                     <div class="category_text">
                         <div>
                             <ul style="display: none;">
@@ -84,15 +84,17 @@
                     </div>
                 </div>
                 <div class="category_">
-                    <div class="category_title">
-                        Tag
-                    </div>
+                    <div class="category_title">Tag</div>
                     <div class="category_text">
                         <div>
                             <ul style="display: none;">
                                 <li><a href="./sunset.html">Sunset</a></li>
-                                <li><a href="./mountain.html">Mountain</a></li>
                                 <li><a href="./tree.html">Tree</a></li>
+                                <li><a href="./road.html">Road</a></li>
+                                <li><a href="./mountain.html">Mountain</a></li>
+                                <li><a href="./waterfall.html">Waterfall</a></li>
+                                <li><a href="./sky.html">Sky</a></li>
+                                <li><a href="./sky.html">Sea</a></li>
                             </ul>
                         </div>
                     </div>
@@ -101,126 +103,191 @@
         </div>
     </div>
 
-    <div id="article">
-        <div id="photo_area">
-            <div id="photo_box">
-                <div id="photo">
-                    <img src="./img/image.jpg">
-                    <div id="tag" class="animated fadeInLeft">
-                        <span class="badge badge-pill badge-primary">tag</span>
-                    </div>
-                </div>
-                <div id="article_content">
-                    <p>read more</p>
-                </div>
+    <div class="new_post">
+        <div id="new_post_title" class="animated infinite bounce">New Post</div>
+        <div class="gallery">
+            <div class="gallery-container">
+                <img class="gallery-item" src="">
+                <img class="gallery-item" src="">
+                <img class="gallery-item" src="">
+                <img class="gallery-item" src="">
+                <img class="gallery-item" src="">
             </div>
-            <div id="photo_box">
-                <div id="photo">
-                    <img src="./img/image1.jpg">
-                    <div id="tag" class="animated fadeInLeft">
-                        <span class="badge badge-pill badge-primary">tag</span>
-                    </div>
-                </div>
-                <div id="article_content">
-                    <p>read more</p>
-                </div>
-            </div>
-            <div id="photo_box">
-                <div id="photo">
-                    <img src="./img/image2.jpg">
-                    <div id="tag" class="animated fadeInLeft">
-                        <span class="badge badge-pill badge-primary">tag</span>
-                    </div>
-                </div>
-                <div id="article_content">
-                    <p>read more</p>
-                </div>
-            </div>
-            <div id="photo_box">
-                <div id="photo">
-                    <img src="./img/image3.jpg">
-                    <div id="tag" class="animated fadeInLeft">
-                        <span class="badge badge-pill badge-primary">tag</span>
-                    </div>
-                </div>
-                <div id="article_content">
-                    <p>read more</p>
-                </div>
-            </div>
-            <div id="photo_box">
-                <div id="photo">
-                    <img src="./img/image4.jpg">
-                    <div id="tag" class="animated fadeInLeft">
-                        <span class="badge badge-pill badge-primary">tag</span>
-                    </div>
-                </div>
-                <div id="article_content">
-                    <p>read more</p>
-                </div>
-            </div>
-            <div id="photo_box">
-                <div id="photo">
-                    <img src="./img/image5.jpg">
-                    <div id="tag" class="animated fadeInLeft">
-                        <span class="badge badge-pill badge-primary">tag</span>
-                    </div>
-                </div>
-                <div id="article_content">
-                    <p>read more</p>
-                </div>
-            </div>
-            <div id="photo_box">
-                <div id="photo">
-                    <img src="./img/image6.jpg">
-                    <div id="tag" class="animated fadeInLeft">
-                        <span class="badge badge-pill badge-primary">tag</span>
-                    </div>
-                </div>
-                <div id="article_content">
-                    <p>read more</p>
-                </div>
-            </div>
-            <div id="photo_box">
-                <div id="photo">
-                    <img src="./img/image7.jpg">
-                    <div id="tag" class="animated fadeInLeft">
-                        <span class="badge badge-pill badge-primary">tag</span>
-                    </div>
-                </div>
-                <div id="article_content">
-                    <p>read more</p>
-                </div>
-            </div>
-            <div id="photo_box">
-                <div id="photo">
-                    <img src="./img/image8.jpg">
-                    <div id="tag" class="animated fadeInLeft">
-                        <span class="badge badge-pill badge-primary">tag</span>
-                    </div>
-                </div>
-                <div id="article_content">
-                    <p>read more</p>
-                </div>
-            </div>
+            <div class="gallery-controls"></div>
         </div>
     </div>
+
+	<div class="tag_area">
+		<div class="sunset">
+			<div class="word_box_left">
+                <a href="./sunset.html"><h1 class="title">Sunset</h1></a>
+                <small>夕陽</small>
+                <br>
+				<h3 class='description'>
+                    日落時的天空<br>
+                    是這世上最不可思議的風景<br>
+                    <br>
+                    每當夕陽這個主角出現時<br>
+                    天空總會換上不同顏色的襯衣<br>
+                    <br>
+                    再好的相機也無法像眼睛一樣<br>
+                    能夠將五彩的天空收進心底
+				</h3>
+				<div class="label">
+                    <small><span class="badge badge-light">象鼻岩</span></small>
+				</div>
+			</div>
+		</div>
+        <div class="tree">
+			<div class="word_box_right">
+                <a href="./tree.html"><h1 class="title">Tree</h1></a>
+                <small>樹木</small>
+                <br>
+				<h3 class='description'>
+                    如果有來生<br>
+                    要做一棵樹<br>
+                    站成永恆<br>
+                    沒有悲歡的姿勢<br>
+                    <br>
+                    一半在塵土裡安詳<br>
+                    一半在風裡飛揚<br>
+                    一半灑落蔭涼<br>
+                    一半沐浴陽光<br>
+                    <br>
+                    非常沉默，非常驕傲<br>
+                    從不依靠，從不尋找<br>
+                    <br>
+                    ----三毛
+				</h3>
+				<div class="label">
+                    <small><span class="badge badge-light">拉拉山巨木群</span></small>
+				</div>
+			</div>
+        </div>
+		<div class="mountain">
+			<div class="word_box_left">
+                <a href="./mountain.html"><h1 class="title">Mountain</h1></a>
+                <small>山脈</small>
+                <br>
+				<h3 class='description'>
+                    山帶給人的感覺是平靜 <br>
+                    是一望無際的廣闊 <br>
+                    <br>
+                    「覺得自己渺小的時候 煩惱也跟著變小了」 <br>
+                    <br>
+                    山總是能給我這種力量
+				</h3>
+				<div class="label">
+                    <small><span class="badge badge-light">無耳茶壺山</span></small>
+				</div>
+			</div>
+		</div>
+		<div class="road">
+			<div class="word_box_right">
+                <a href="./road.html"><h1 class="title">Road</h1></a>
+                <small>路途</small>
+                <br>
+				<h3 class='description'>
+                    人生總有一段路<br>
+                    你得一個人走<br>
+                    自己走一段路<br>
+                    或許辛苦 可能受挫<br>
+                    但最終會有所收穫<br>
+                    <br>
+                    「自己選的路 跪著也要走完」
+				</h3>
+				<div class="label">
+                    <small><span class="badge badge-light">忘憂谷步道</span></small>
+				</div>
+			</div>
+		</div>
+		<div class="waterfall">
+			<div class="word_box_left">
+                <a href="./waterfall.html"><h1 class="title">Waterfall</h1></a>
+                <small>瀑布</small>
+                <br>
+				<h3 class='description'>
+                    水流 對懸崖無所畏懼 <br>
+                    所以能夠唱出氣勢滂礡的生命之歌<br>
+                    <br>
+                    當水跨過懸崖峭壁<br>
+                    才顯得格外雄偉壯觀<br>
+                    <br>
+                    面對困難時 我們不妨想想<br>
+                    水流是如何變成瀑布的
+				</h3>
+				<div class="label">
+                    <small><span class="badge badge-light">平溪瀑布</span></small>
+				</div>
+			</div>
+        </div>
+        <div class="sky">
+			<div class="word_box_right">
+                <a href="./sky.html"><h1 class="title">Sky</h1></a>
+                <small>天空</small>
+                <br>
+				<h3 class='description'>
+                    如果難過了<br>
+                    就抬頭看天空吧<br>
+                    它那麼遼闊<br>
+                    一定能包容你所有的委屈
+				</h3>
+				<div class="label">
+                    <small><span class="badge badge-light">on the air</span></small>
+				</div>
+			</div>
+		</div>
+        <div class="sea">
+			<div class="word_box_left">
+                <a href="./sea.html"><h1 class="title">Sea</h1></a>
+                <small>海洋</small>
+                <br>
+				<h3 class='description'>
+                    溪水急著要流向海洋<br>
+                    浪潮卻渴望重回土地<br>
+                    <br>
+                    世界可以沒有人類<br>
+                    但人類不能沒有世界<br>
+
+				</h3>
+				<div class="label">
+                    <small><span class="badge badge-light">和平島</span></small>
+				</div>
+			</div>
+		</div>
+
+	</div>
 
     <div id="footer">
         <div class="footer_background">
-            <div class="footer_bg_area">
-                <div class="word">
-                    <p class="footer_word">~ Season ~</p>
-                </div>
+            <div class="footer_word">
+                    <div class="footer_title">Season</div><br>
+                    <small>engineer | photographer</small><br>
+                    <img src="./img/github_icon.png" width="20px"> GITHUB | 
+                    <img src="./img/ig_icon.png" width="20px"> INSTAGRAM | 
+                    <img src="./img/fb_icon.png" width="20px"> FACEBOOK
             </div>
         </div>
     </div>
-    
-    <!-- canvas -->
-    <script type="text/javascript" color="0,0,255" pointColor="0,0,255" opacity='0.7' zIndex="-2" count="200"
-        src="./canvas/dist/canvas-nest.js"></script>
-    <script type="text/javascript" src="./canvas/dist/canvas-nest.umd.js"></script>
-    <script type="text/javascript" src="./js/canvas.js"></script>
 
+
+    <!-- api串接 -->
+    <script>
+        $.ajax({
+            type: "GET",
+            url: "http://127.0.0.1:8000/newpost",
+            dataType: "json",
+            success: function(response) {
+                var items = document.getElementsByClassName("gallery-item");
+                for(let i = 0; i < response.length; i++) {
+                    items[i].src = response[i].Image_url
+                }
+            }
+        });
+    </script>
+    <!-- slider -->
+    <script type="text/javascript" src="./js/carousel.js"></script>
+    
     <!-- 下拉置頂 -->
     <script type="text/javascript" src="./js/menu.js"></script>
 
@@ -230,7 +297,7 @@
     <!-- 點擊後平順滑動到# -->
     <script>
         $(function () {
-            $('a[href*=#]:not([href=#])').click(function () {
+            $('a[href="#menu"]').click(function () {
                 var target = $(this.hash);
                 $('html,body').animate({
                     scrollTop: target.offset().top

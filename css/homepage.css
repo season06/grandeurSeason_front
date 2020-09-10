@@ -1,22 +1,13 @@
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, img{
+*{
     border: 0px;
     margin: 0px;
     padding: 0px;
+    list-style: none;
 }
 a{
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
 }
-ol,ul,li {
-    list-style: none;
-    padding: 0px;
-    margin: 0px;
-}
-h1,h2,h3,h4,h5,h6 {
-    font-size: 100%;
-    font-weight: normal;
-}
-
 
 #desktop {
     position: relative;
@@ -29,7 +20,7 @@ h1,h2,h3,h4,h5,h6 {
 .carousel-caption {
     position: absolute;
     right: 15%;
-    top: 18%;
+    top: 13%;
     left: 15%;
 } 
 .carousel-caption #up {
@@ -39,7 +30,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 .head_word {
     position: absolute;
-    top: 60%;
+    top: 90%;
     color: #ffffff;
     width: 100%;
     line-height: 150%;
@@ -68,18 +59,18 @@ h1,h2,h3,h4,h5,h6 {
     padding: 5px 0px;
     text-align: right;
     letter-spacing: 3px;
-    line-height: 200%;
+    line-height: 150%;
     background: #eaeaea;
     z-index: 100;
 }
 #logo {
     position: absolute;
-    top: 5px;
+    top: 1px;
     left: 30px;
     opacity: 0.7;
 }
 #menu_category{
-    padding: 0px 50px;
+    padding: 0px 60px;
 }
 .category_ {
     display: inline-block;
@@ -129,88 +120,147 @@ h1,h2,h3,h4,h5,h6 {
     left: 1px;
 }
 
-#article {
-    padding: 100px 0px;
+.new_post{
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url(../img/new_post_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
-#article #photo_area {
+#new_post_title{
     text-align: center;
-    letter-spacing: 1px;
-    line-height: 170%;
-    padding: 0px 100px;
-}
-#article #photo_box {
-    display: inline-block;
-    vertical-align: top;
-    width: calc(33% - 40px);
-    padding: 0px 15px 50px 15px;
-    position: relative;
-}
-#article #photo {
-    position: relative;
-    margin-bottom: 10px;
-    transform: scale(1,1);
-    transition: all 0.5s ease-out;
+    width: 100vw;
+    font-size: 40px;
+    margin-top: 50px;
+    margin-bottom: -50px;
+    font-family: 'Mogra', cursive;
+    animation-duration: 3s;
 }
 
-#tag {
-    display: none;
+.title{
+    font-size: 20pt;
+    font-weight: normal;
 }
-#article #photo:hover #tag{
-    display: block;
-    position: absolute;
-    color: #ffffff;
-    top: 10px;
-    left: 20px;
+.description{
+    font-size: 10pt;
+}
+.word_box_left{
+    background-color: black;
+    opacity: 0.6;
+    height: 100vh;
+    width: 30vw;
+    /* 左邊對齊 */
+    margin-left: 50px;
+    /* 水平&垂直置中 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* word */
+    color: white;
+    text-align: center;
+    letter-spacing: 2px;
+}
+.word_box_right{
+    background-color: black;
+    opacity: 0.6;
+    height: 100vh;
+    width: 30vw;
+    /* 右邊對齊 */
+    float: right;
+    margin-right: 50px;
+    /* 水平&垂直置中 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* word */
+    color: white;
+    text-align: center;
+    letter-spacing: 2px;
+}
+.label{
+    padding-top: 70px;
 }
 
-#article #photo:hover {
-    transform:scale(1.05,1.05);
-}
-#article #photo img{
-    box-shadow: 8px 9px 14px -3px #3B3B3B;
-    width: 100%;
-    height: auto !important;
-}
-#article #photo a{
-    font-size: 0px;
+.tag_area .sunset{
+    background: url("../img/tag_sunset.jpg") 50% 85% no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    background: #000;
-    opacity: 0;
+    height: 100vh;
+    position: relative;
+}
+.tag_area .tree{
+    background: url("../img/tag_tree.jpg") 50% 5% no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: block;
+    height: 100vh;
+    position: relative;
+}
+.tag_area .road{
+    background: url("../img/tag_road.jpg") 50% 40% no-repeat;
+    background-size: 100% auto;
+    background-attachment: fixed;
+    display: block;
+    height: 100vh;
+    position: relative;
+}
+.tag_area .mountain{
+    background: url("../img/tag_mountain.jpg") 100% 80% no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: block;
+    height: 100vh;
+    position: relative;
+}
+.tag_area .waterfall{
+    background: url("../img/tag_waterfall.jpg") 100% 10% no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: block;
+    height: 100vh;
+    position: relative;
+}
+.tag_area .sky{
+    background: url("../img/tag_sky.jpg") 100% 40% no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    display: block;
+    height: 100vh;
+    position: relative;
+}
+.tag_area .sea{
+    background: url("../img/tag_sea.jpg") 70% 50% no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: block;
+    height: 100vh;
+    position: relative;
 }
 
 .footer_background {
-    background: url("../img/footer.jpg") 50% 35% no-repeat;
-    background-attachment: fixed;
-    display: block;
-    height: 200px;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.9;
     position: relative;
-    -moz-background-size: cover !important;
-    -webkit-background-size: cover !important;
-    -o-background-size: cover !important;
-    background-size: cover !important;
-    scroll-behavior: auto;
-}
-.footer_bg_area {
-    width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-}
+    height: 180px;
+ }
 .footer_word {
-    color: #000000;
+    color: #ffffff;
     width: 100%;
     text-align: center;
-    line-height: 200%;
     letter-spacing: 2px;
-    font-family: "Times New Roman";
-    font-size: 20pt;
+    font-size: 15pt;
     font-weight: bold;
+    font-family: 'Long Cang', cursive;
+}
+.footer_title {
+    font-size: 30pt;
+    margin-bottom: -40px;
 }
 
 .tempContainer{
@@ -220,18 +270,3 @@ h1,h2,h3,h4,h5,h6 {
     text-align: center; 
     z-index: 101;
 }
-
-
-
-/* .head_background {
-    background: url("../img/desktop.jpg") 50% 70% no-repeat;
-    background-attachment: fixed;
-    display: block;
-    height: 620px;
-    position: relative;
-    -moz-background-size: cover !important;
-    -webkit-background-size: cover !important;
-    -o-background-size: cover !important;
-    background-size: cover !important;
-    scroll-behavior: auto;
-} */

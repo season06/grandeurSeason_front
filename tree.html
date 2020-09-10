@@ -11,13 +11,16 @@
     <!-- Animate.css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"/>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <!-- import css -->
     <link rel="stylesheet" type="text/css" href="./css/tree.css">
+    <!-- 字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Mogra&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet">
     
-    <title>Tree</title>
+    <title>Tree ｜ Season</title>
 </head>
 
 <body>
@@ -30,8 +33,8 @@
                     </div>
                     <div>
                         <p class="head_word">
-                            Life is short, world is wide<br>
-                            The sooner you start exploring it, the better.<br>
+                            Some journeys need to be taken alone.<br>
+                            It's the only way to figure out where you need to go.<br>
                         </p>
                     </div>
                 </div>
@@ -44,18 +47,14 @@
 
     <div id="menu">
         <div id="logo">
-            <img src="./img/logo.png", width="100">
+            <a href="./home.html"><img src="./img/logo.png", width="100"></a>
         </div>
         <div id="menu_category" class="menu_box">
             <div class="category_">
-                <div class="category_title">
-                    About
-                </div>
+                <div class="category_title">About</div>
             </div>
             <div class="category_">
-                <div class="category_title">
-                    Travel
-                </div>
+                <div class="category_title">Travel</div>
                 <div class="category_text">
                     <div>
                         <ul style="display: none;">
@@ -66,15 +65,17 @@
                 </div>
             </div>
             <div class="category_">
-                <div class="category_title">
-                    Tag
-                </div>
+                <div class="category_title">Tag</div>
                 <div class="category_text">
                     <div>
                         <ul style="display: none;">
                             <li><a href="./sunset.html">Sunset</a></li>
-                            <li><a href="./mountain.html">Mountain</a></li>
                             <li><a href="./tree.html">Tree</a></li>
+                            <li><a href="./road.html">Road</a></li>
+                            <li><a href="./mountain.html">Mountain</a></li>
+                            <li><a href="./waterfall.html">Waterfall</a></li>
+                            <li><a href="./sky.html">Sky</a></li>
+                            <li><a href="./sky.html">Sea</a></li>
                         </ul>
                     </div>
                 </div>
@@ -82,24 +83,30 @@
         </div>
     </div>
 
+    <div id="title">
+        <h3 class="animated infinite pulse"><span class="badge badge-pill badge-info">Tree (18)</span></h3>
+    </div>
+        
     <div id="photo">
-        <h3 id="title" class="animated infinite pulse"><span class="badge badge-pill badge-info">Tree (18)</span></h3>
-        <div id="photo_area">
+       <div id="photo_area">
             <!-- <div class="photo_box">
-                <img src="./img/sunset/1.jpeg">
+                <img src="./img/1.jpg">
             </div>-->
         </div>
+        <div id="end"></div>
     </div>
 
-    <!-- <div id="footer">
+    <div id="footer">
         <div class="footer_background">
-            <div class="footer_bg_area">
-                <div class="word">
-                    <p class="footer_word">~ Season ~</p>
-                </div>
+            <div class="footer_word">
+                    <div class="footer_title">Season</div><br>
+                    <small>engineer | photographer</small><br>
+                    <img src="./img/github_icon.png" width="20px"> GITHUB | 
+                    <img src="./img/ig_icon.png" width="20px"> INSTAGRAM | 
+                    <img src="./img/fb_icon.png" width="20px"> FACEBOOK
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- canvas -->
     <script type="text/javascript" color="0,0,255" pointColor="0,0,255" opacity='0.7' zIndex="-2" count="200"
@@ -110,69 +117,19 @@
     <script type="text/javascript" src="./js/menu.js"></script>
     <!-- 點擊放大 -->
     <script type="text/javascript" src="./js/bigImg.js"></script>
-    
-    <!-- 下拉加載圖片 -->
+    <!-- api串接 -->
     <script>
-        var dataInt =[{"src":"1.jpg"},{"src":"2.jpg"},{"src":"3.jpg"},{"src":"4.jpg"},{"src":"6.jpg"},{"src":"5.jpg"},{"src":"7.jpg"},{"src":"8.jpg"},{"src":"9.jpg"},{"src":"10.jpg"},
-                    {"src":"11.jpg"},{"src":"12.jpg"},{"src":"13.jpg"},{"src":"14.jpg"},{"src":"15.jpg"},{"src":"16.jpg"},{"src":"17.jpg"},{"src":"18.jpg"},
-                    {"src":"19.jpg"},{"src":"20.jpg"},{"src":"21.jpg"},{"src":"22.jpg"},{"src":"23.jpg"}]
-        $(window).on('scroll',search)
-        function search(){
-            if (checkScrollSlide){
-                // 遍歷後臺的資料
-                $.each(dataInt,function(key,value){
-                    // 直接用jQuery方法就可以建立元素，新增類名，新增到父元素後面，方法可以通過.迭代 
-                    var oBox = $('<div>').addClass('photo_box').appendTo('#photo_area');
-                    var oImg = $('<img>').attr('src','./img/tree/'+ $(value).attr('src')).appendTo($(oBox));
-                })
-                waterfall();
-                dataInt = [];
+        $.ajax({
+            type: "GET",
+            url: "http://127.0.0.1:8000/findImage_by_tag?tag=tree",
+            dataType: "json",
+            success: function(response) {
+                lazyload(response);
             }
-        }
-        function waterfall(){
-            // > 取mian元素的第一個子元素
-            var $boxs = $('#photo_area>div');
-            // 列寬width（）只能獲得圖片寬度，outerWidth（）能獲得邊界寬度
-            var w = $boxs.eq(0).outerWidth();
-            var cols = Math.floor($(window).width()/w);
-            $('#photo_area').width(cols*w).css('margin', '0 auto');
-            var hArr=[];
-            // jquery的遍歷方法
-            $boxs.each(function(index,value){
-                //console.log(value); 列印的是dom物件，
-                var h=$boxs.eq(index).outerHeight();
-                if (index<cols){
-                    // 獲取第一行的高度
-                    hArr[index]=h;
-                }
-                else{
-                    // 獲取最矮的圖片的索引
-                    var minH = Math.min.apply(null,hArr);
-                    // inArray函式能獲取指定數值的索引
-                    var minHIndex = $.inArray(minH,hArr);
-                    // value是dom物件，不能直接用jQuery方法直接操作，要轉換為jQuery物件
-                    $(value).css({
-                        'position':'absolute',
-                        'top':minH +'px',
-                        'left':minHIndex*w +'px',
-                    })
-                    // 在else迴圈中  改變的是加上下一行元素後的高度
-                    hArr[minHIndex] += $boxs.eq(index).outerHeight();
-                }				
-            })
-        }
-
-        function checkScrollSlide(){
-            // 獲取最後一個圖片
-            var $lastBox = $('#photo_area>div').last();
-            // 最後一個圖片距離父元素的高度和自身一半的高度
-            var lastBoxDis = $lastBox.offset().height+Math.floor($lastBox.outerHeight());
-            var scrollTop = $(window).scrollTop();
-            var documentH = $(window).height();
-            return(lastBoxDis<scrollTop+documentH)?true:false;
-        }
+        });
     </script>
-
+    <!-- lazy load-->
+    <script type="text/javascript" src="./js/lazyload.js"></script>
     
 </body>
 
