@@ -20,7 +20,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Mogra&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Tillana:wght@500&display=swap" rel="stylesheet">
+
     <title>Sunset ｜ Season</title>
 </head>
 
@@ -34,8 +35,9 @@
                     </div>
                     <div>
                         <p class="head_word">
-                            Life is short, world is wide<br>
-                            The sooner you start exploring it, the better.<br>
+                            We fall, We break, We fail.<br>
+                            But then<br>
+                            We rise, We heal, We <span style="color: red;">overcome</span>.
                         </p>
                     </div>
                 </div>
@@ -76,7 +78,8 @@
                             <li><a href="./mountain.html">Mountain</a></li>
                             <li><a href="./waterfall.html">Waterfall</a></li>
                             <li><a href="./sky.html">Sky</a></li>
-                            <li><a href="./sky.html">Sea</a></li>
+                            <li><a href="./sea.html">Sea</a></li>
+                            <li><a href="./photograph.html">Photograpy</a></li>
                         </ul>
                     </div>
                 </div>
@@ -84,18 +87,23 @@
         </div>
     </div>
 
-    <div id="title">
-        <h1 id="fix" class="animated infinite pulse badge badge-pill badge-info"></h1>
+    <div id="img_title">
+        <h1 id="fix_test" style="font-size: 25pt;" class="animated infinite pulse"></h1>
     </div>
-        
+    
     <div id="photo">
         <div id="photo_area">
-            <div class="photo_box">
+            <!-- <div class="photo_box">
                 <img class="lazyload" src="./img/tag_photograph.jpg">
-                <span id="location" class="animated fadeInDown badge badge-pill badge-dark">太平山國家公園</span>
+                <span id="location" class="animated fadeInDown">
+                    <input onblur="loc(this)" alt='0' placeholder="location" class="loc" value="">
+                </span>
                 <img onclick="fav(this)" alt='0' src='./img/favorite_icon.png' id="favorite" class="animated fadeInLeft">
                 <img onclick="del(this)" alt='0' src='./img/delete_icon.png' id="delete" class="animated fadeInRight">
-            </div>
+            </div> -->
+            <span class="item break"></span>
+            <span class="item break"></span>
+            <span class="item break"></span>
         </div>
         <div id="end"></div>
     </div>
@@ -111,20 +119,32 @@
             </div>
         </div>
     </div>
+    
+    <fieldset>
+        <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000"/>
+        <input id="fileselect" name="fileselect[]" multiple="multiple"/>
+        <div id="filedrag"></div>
+    </fieldset>
+
     <!-- canvas -->
     <script type="text/javascript" color="0,0,255" pointColor="0,0,255" opacity='0.7' zIndex="-2" count="200"
         src="./canvas/dist/canvas-nest.js"></script>
     <script type="text/javascript" src="./canvas/dist/canvas-nest.umd.js"></script>
     <script type="text/javascript" src="./js/canvas.js"></script>
-    <!-- 下拉置頂 -->
-    <script type="text/javascript" src="./js/menu.js"></script>
-    <!-- 點擊放大 -->
-    <!-- <script type="text/javascript" src="./js/bigImg.js"></script> -->
-    <!-- api串接 -->
+
+    <!-- Global parameters -->
+    <script>
+        const baseRoot = "C:\\Users\\HP AY111TX\\Pictures\\Phone\\photo\\sunset\\";
+        const tag_id = 1;
+        const tag = "sunset"
+        const img_title = "Sunset"
+    </script>
+
+    <!-- api串接 : image, num -->
     <script>
         $.ajax({
             type: "GET",
-            url: "http://127.0.0.1:8000/findImage_by_tag?tag=sunset",
+            url: "http://127.0.0.1:8000/findImage_by_tag?tag=" + tag,
             dataType: "json",
             success: function(response) {
                 lazyload(response);
@@ -132,109 +152,42 @@
         });
         $.ajax({
             type: "GET",
-            url: "http://127.0.0.1:8000/findImageNum?tag=sunset",
+            url: "http://127.0.0.1:8000/findImageNum?tag=" + tag,
             dataType: "json",
             success: function(response) {
-                var text = "Sunset (" + response.image_num + ")";
-                document.getElementById("fix").textContent=text;
+                var text = img_title + " (" + response.image_num + ")";
+                document.getElementById("fix_test").textContent = text;
             }
         });
     </script>
-    <!-- lazy load-->
-    <script type="text/javascript" src="./js/lazyload.js"></script>
-    
-    <!-- icon click -->
-    <script type="text/javascript">
-        function fav(obj) {
-            var index = obj.getAttribute("alt");
-            var param = $.param({"id": index});
-            $.ajax({
-                type: "GET",
-                url: "http://127.0.0.1:8000/addFavorite?" + param,
-                dataType: "json",
-                success: function(response) {
-                    img_src = './img/favorite_icon.png';
-                    if(response.Favorite==1) {
-                        img_src = './img/favorite_icon_red.png';
-                    }
-                    obj.src = img_src;
-                }
+
+    <!-- arrow 點擊後平順滑動到# -->
+    <script>
+        $(function () {
+            $('a[href="#menu"]').click(function () {
+                var target = $(this.hash);
+                $('html,body').animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+                return false;
             });
-        }
-        function del(obj) {
-            var index = obj.getAttribute("alt");
-            var param = $.param({"id": index});
-            $.ajax({
-                type: "GET",
-                url: "http://127.0.0.1:8000/deleteImage?" + param,
-                dataType: "json",
-                success: function(response) {
-                    window.location.reload();
-                }
-            });
-        }
+        });
     </script>
 
-    <!-- 下拉加載圖片 -->
-    <!-- <script>
-        $(window).on('scroll',search)
-        function search(){
-            if (checkScrollSlide){
-                // 遍歷後臺的資料
-                $.each(dataInt,function(key,value){
-                    // 直接用jQuery方法就可以建立元素，新增類名，新增到父元素後面，方法可以通過.迭代 
-                    var oBox = $('<div>').addClass('photo_box').appendTo('#photo_area');
-                    var oImg = $('<img>').attr('src','./img/sunset/'+ $(value).attr('src')).appendTo($(oBox));
-                })
-                waterfall();
-                dataInt = [];
-            }
-        }
-        function waterfall(){
-            // > 取mian元素的第一個子元素
-            var $boxs = $('#photo_area>div');
-            // 列寬width（）只能獲得圖片寬度，outerWidth（）能獲得邊界寬度
-            var w = $boxs.eq(0).outerWidth();
-            var cols = Math.floor($(window).width()/w);
-            $('#photo_area').width(cols*w).css('margin', '0 auto');
-            var hArr=[];
-            // jquery的遍歷方法
-            $boxs.each(function(index,value){
-                //console.log(value); 列印的是dom物件，
-                var h=$boxs.eq(index).outerHeight();
-                if (index<cols){
-                    // 獲取第一行的高度
-                    hArr[index]=h;
-                }
-                else{
-                    // 獲取最矮的圖片的索引
-                    var minH = Math.min.apply(null,hArr);
-                    // inArray函式能獲取指定數值的索引
-                    var minHIndex = $.inArray(minH,hArr);
-                    // value是dom物件，不能直接用jQuery方法直接操作，要轉換為jQuery物件
-                    $(value).css({
-                        'position':'absolute',
-                        'top':minH +'px',
-                        'left':minHIndex*w +'px',
-                    })
-                    // 在else迴圈中  改變的是加上下一行元素後的高度
-                    hArr[minHIndex] += $boxs.eq(index).outerHeight();
-                }				
-            })
-        }
+    <!-- menu 下拉置頂 -->
+    <script type="text/javascript" src="./js/menu.js"></script>
 
-        function checkScrollSlide(){
-            // 獲取最後一個圖片
-            var $lastBox = $('#photo_area>div').last();
-            // 最後一個圖片距離父元素的高度和自身一半的高度
-            var lastBoxDis = $lastBox.offset().height+Math.floor($lastBox.outerHeight());
-            var scrollTop = $(window).scrollTop();
-            var documentH = $(window).height();
-            return(lastBoxDis<scrollTop+documentH)?true:false;
-        }
-    </script> -->
+    <!-- 點擊放大 -->
+    <script type="text/javascript" src="./js/bigImg.js"></script>
 
+    <!-- lazy loading-->
+    <script type="text/javascript" src="./js/lazyload.js"></script>
+
+    <!-- draggable upload file -->
+    <script type="text/javascript" src="./js/draggable_upload.js"></script>
     
+    <!-- insert location / icon click : favorite, delete -->
+    <script type="text/javascript" src="./js/click_event.js"></script>
 </body>
 
 </html>

@@ -27,7 +27,7 @@ input {
     z-index: 90;
 }
 .head_background {
-    background: url("../img/bg_sunset.jpg") 50% 70% no-repeat;
+    background: url("../img/bg_sky.jpg") 50% 30% no-repeat;
     background-attachment: fixed;
     display: block;
     height: 100vh;
@@ -147,7 +147,7 @@ input {
     padding: 50px 50px 50px 50px;
     text-align: center;
     font-family: 'Mogra', cursive;
-    color: rgb(245, 115, 28);
+    color: rgb(28, 147, 245);
     letter-spacing: 1px;
     animation-duration: 3s;
 }

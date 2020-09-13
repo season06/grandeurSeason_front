@@ -20,7 +20,8 @@
     <!-- 字體 -->
     <link href="https://fonts.googleapis.com/css2?family=Mogra&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Tillana:wght@500&display=swap" rel="stylesheet">
+
     <title>Season</title>
 </head>
 
@@ -94,7 +95,8 @@
                                 <li><a href="./mountain.html">Mountain</a></li>
                                 <li><a href="./waterfall.html">Waterfall</a></li>
                                 <li><a href="./sky.html">Sky</a></li>
-                                <li><a href="./sky.html">Sea</a></li>
+                                <li><a href="./sea.html">Sea</a></li>
+                                <li><a href="./photograph.html">Photograpy</a></li>
                             </ul>
                         </div>
                     </div>
@@ -103,7 +105,7 @@
         </div>
     </div>
 
-    <div class="new_post">
+    <div id="img_title">
         <div id="new_post_title" class="animated infinite bounce">New Post</div>
         <div class="gallery">
             <div class="gallery-container">
@@ -237,8 +239,25 @@
 				</div>
 			</div>
 		</div>
-        <div class="sea">
+        <div class="photograph">
 			<div class="word_box_left">
+                <a href="./photograph.html"><h1 class="title">Photograph</h1></a>
+                <small>攝影</small>
+                <br>
+				<h3 class='description'>
+                    用不同的角度看世界<br>
+                    <br>
+                    <br>
+                    World is a mirror,<br>
+                    it laughs when you laugh.
+				</h3>
+				<div class="label">
+                    <small><span class="badge badge-light">太平山國家公園</span></small>
+				</div>
+			</div>
+		</div>
+        <div class="sea">
+			<div class="word_box_right">
                 <a href="./sea.html"><h1 class="title">Sea</h1></a>
                 <small>海洋</small>
                 <br>
@@ -255,7 +274,6 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 
     <div id="footer">
@@ -271,7 +289,7 @@
     </div>
 
 
-    <!-- api串接 -->
+    <!-- api串接 : newpost -->
     <script>
         $.ajax({
             type: "GET",
@@ -285,16 +303,14 @@
             }
         });
     </script>
+
     <!-- slider -->
     <script type="text/javascript" src="./js/carousel.js"></script>
     
-    <!-- 下拉置頂 -->
+    <!-- menu 下拉置頂 -->
     <script type="text/javascript" src="./js/menu.js"></script>
 
-    <!-- 點擊放大 -->
-    <script type="text/javascript" src="./js/bigImg.js"></script>
-
-    <!-- 點擊後平順滑動到# -->
+    <!-- arrow 點擊後平順滑動到# -->
     <script>
         $(function () {
             $('a[href="#menu"]').click(function () {

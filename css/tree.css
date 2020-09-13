@@ -1,24 +1,33 @@
-*{
+* {
     border: 0px;
     margin: 0px;
     padding: 0px;
     list-style: none;
 }
-a{
+a {
     color: #000000;
     text-decoration: none;
 }
 
-@font-face {
-    font-family: cwTeXKai;
-    src: url(https://fonts.googleapis.com/earlyaccess/cwtexkai.css);
+input {
+    background: rgb(61, 60, 60);
+    border: 2px rgb(100, 96, 96) solid;
+    border-radius: 10px;
+    width: 150px;
+    height: 25px;
+    text-align: center;
+    color: white;
+    font-size: 12pt;
+    font-weight: bold;
+    font-family: 'cwTeXFangSong', sans-serif;
 }
 
 #desktop {
     position: relative;
+    z-index: 90;
 }
 .head_background {
-    background: url("../img/C1.jpg") 50% 70% no-repeat;
+    background: url("../img/bg_tree.jpg") 50% 10% no-repeat;
     background-attachment: fixed;
     display: block;
     height: 100vh;
@@ -40,15 +49,15 @@ a{
 }
 .head_word {
     position: absolute;
-    top: 60%;
-    color: #ffffff;
     width: 100%;
-    line-height: 150%;
-    letter-spacing: 2px;
-    font-family: "Times New Roman";
-    font-size: 18pt;
-    font-weight: bold;
+    top: 100%;
     padding: 50px 0px 10px 0px;
+    color: #ffffff;
+    font-size: 15pt;
+    font-weight: bold;
+    line-height: 180%;
+    letter-spacing: 2px;
+    font-family: 'Tillana', cursive;
 }
 #desktop_area #down {
     position: absolute;
@@ -79,14 +88,16 @@ a{
     left: 30px;
     opacity: 0.7;
 }
-#menu_category{
-    padding: 0px 60px;
+#menu_category {
+    padding: 0px 70px;
 }
+
 .category_ {
     display: inline-block;
     vertical-align: top;
     padding: 5px 0px;
-    font-family: "Times New Roman";
+    font-size: 12pt;
+    font-family: 'Tillana', cursive;
     color: #777;
 }
 .category_title {
@@ -97,46 +108,50 @@ a{
     content: "|";
     padding: 0px 0px 0px 15px;
 }
-.category_:nth-child(1) .category_title:before{
+.category_:nth-child(1) .category_title:before {
     content: "|";
     padding-right: 15px;
 }
-.category_:hover .category_title{
+.category_:hover .category_title {
     color: rgb(62, 134, 250);
 }
-.category_text{
+.category_text {
     display: none;
 }
-.category_:hover .category_text{
+.category_:hover .category_text {
     display: block;
     position: absolute;
     z-index: 100;
     padding-top: 10px;
     text-align: left;
 }
-.category_ .category_text ul{
+.category_ .category_text ul {
     padding: 15px;
     background: #888;
     display: block !important;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-.category_ .category_text ul a{
+.category_ .category_text ul a {
     color: #ffffff;
 }
-.category_ .category_text ul a:hover{
+
+.category_ .category_text ul a:hover {
     position: relative;
     top: 1px;
     left: 1px;
 }
 
-#title {
+#img_title {
+    width: 100%;
+    padding: 50px 50px 50px 50px;
     text-align: center;
-    padding: 50px 100px;
-    font-size: 10pt;
-    font-weight: bold;
+    font-family: 'Mogra', cursive;
+    color: rgb(112, 211, 20);
     letter-spacing: 1px;
+    animation-duration: 3s;
 }
+
 #photo {
     position: relative;
     margin: 0 50px 0 50px;
@@ -146,22 +161,64 @@ a{
     column-gap: 0;
 }
 .photo_box {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
     box-sizing: border-box;
     break-inside: avoid;
     padding: 10px;
-
-    overflow: hidden;
+    z-index: 90;
 }
-.photo_box img{
+.photo_box img {
     display: block;
     border-radius: 10px;
     width: 100%;
     height: auto !important;
-    transform: scale(1,1);
+    transform: scale(1, 1);
     transition: all 0.5s ease-out;
 }
-.photo_box img:hover{
-    transform: scale(1.05,1.05);
+.photo_box img:hover {
+    transform: scale(1.05, 1.05);
+}
+
+#location{
+    display: none;
+}
+#favorite{
+    display: none;
+}
+#delete{
+    display: none;
+}
+#photo_area .photo_box:hover #location {
+    opacity: 0.5;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    top: 15px;
+    width: calc(100% - 10px);
+    font-family: 'cwTeXFangSong', sans-serif;
+}
+#photo_area .photo_box:hover #favorite {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    opacity: 0.5;
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+#photo_area .photo_box:hover #delete {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    opacity: 0.5;
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }
 
 .footer_background {
@@ -172,7 +229,8 @@ a{
     align-items: center;
     height: 180px;
     top: 20px;
- }
+    z-index: 90;
+}
 .footer_word {
     color: #ffffff;
     width: 100%;
@@ -185,4 +243,29 @@ a{
 .footer_title {
     font-size: 30pt;
     margin-bottom: -40px;
+}
+
+.tempContainer {
+    background: rgba(37, 37, 37, 0.9);
+    position: fixed;
+    width: 100%;
+    text-align: center; 
+    z-index: 101;
+}
+
+#fileselect {
+    display: none;
+}
+#filedrag {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    top: 0;
+    display: none;
+    cursor: default;
+}
+
+#filedrag.hover {
+    border: 3px dashed rgb(246, 109, 18);
 }

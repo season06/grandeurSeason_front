@@ -1,7 +1,10 @@
 document.getElementById("photo_area").addEventListener("click", function(element){
     var target = element.target;
-    var src = target.getAttribute("src");
-    BigImg(src);
+    var t = target.getAttribute("class");
+    if(t == "lazyload") {
+        var src = target.getAttribute("src");
+        BigImg(src);
+    }
 });
 function BigImg(src) {
     var tempContainer = $("<div class=tempContainer></div>");
@@ -28,7 +31,7 @@ function BigImg(src) {
                 }
             }
             css("top", 0);
-            html("<img src=" + src + " width=" + img_width + " height=" + img_height + ";>");
+            $("<img>").attr("src", src).attr("width",img_width).attr("height",img_height).appendTo($(tempContainer));
         }
     }
     $(".tempContainer").click(function () {

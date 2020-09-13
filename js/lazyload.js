@@ -8,8 +8,8 @@ function lazyload(response) {
         
         $('<img>').attr('class','lazyload').attr('src', response[image_num].Image_url).appendTo($(oBox));
         var oSpan = $('<span>').attr('id','location').attr('class','animated fadeInDown')
-        $('<span>').attr('class','badge badge-pill badge-dark').text("location").appendTo($(oSpan));
-        
+        $('<input>').attr('onblur','loc(this)').attr('alt', response[image_num].Id).attr('placeholder','location').attr('class','loc').attr('value',response[image_num].Location).appendTo($(oSpan));
+
         var oIcon1
         if(response[image_num].Favorite == 0) {
             oIcon1 = $('<img>').attr('onclick','fav(this)').attr('id','favorite').attr('class','animated fadeInLeft').attr('alt', response[image_num].Id).attr('src', './img/favorite_icon.png')

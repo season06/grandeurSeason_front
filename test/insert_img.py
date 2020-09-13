@@ -13,7 +13,8 @@ tag_dict = {
     'mountain': 4,
     'sky': 5,
     'sea': 6,
-    'photograph': 7
+    'photograph': 7,
+    'road': 8
 }
 
 image_json = {
@@ -21,7 +22,7 @@ image_json = {
     'image_url': '',
     'type': '',
     'location': '',
-    'tag': 3
+    'tag': 0
 }
 
 image_json_arr = []
