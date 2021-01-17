@@ -2,9 +2,11 @@ body {
     margin: 0px;
     padding: 0px;
 }
+
 a {
     text-decoration: none;
 }
+
 a:hover {
     color: none;
     text-decoration: none;
@@ -12,9 +14,17 @@ a:hover {
 }
 
 @keyframes fadeOut {
-    0% { background-color: #000000; }
-    50% { background-color: #0000008e; }
-    100% { background-color: rgba(255, 255, 255, 0); }
+    0% {
+        background-color: #000000;
+    }
+
+    50% {
+        background-color: #0000008e;
+    }
+
+    100% {
+        background-color: rgba(255, 255, 255, 0);
+    }
 }
 
 .preloader {
@@ -40,7 +50,7 @@ a:hover {
 }
 
 .bg {
-    background: url("./background.png");
+    background: url("./img/background.png");
     background-size: 100% 100%;
     position: fixed;
     height: 100%;
@@ -65,6 +75,7 @@ a:hover {
 .block img:hover {
     transform: scale(1.2);
 }
+
 .quate_area {
     display: block;
     position: relative;
